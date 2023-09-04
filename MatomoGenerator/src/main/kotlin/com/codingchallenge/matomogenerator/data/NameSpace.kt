@@ -1,5 +1,6 @@
-package com.codingchallenge.matomogenerator
+package com.codingchallenge.matomogenerator.data
 
+import com.codingchallenge.matomogenerator.data.NameEntry
 import jakarta.persistence.*
 
 @Entity
