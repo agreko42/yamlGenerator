@@ -45,4 +45,16 @@ class EndpointService(val namespaceRepository: NamespaceRepository, val nameEntr
         }
 
     }
+
+    fun getAllResources() : List<String> {
+        return nameEntryRepository
+            .findAll()
+            .stream()
+            .map { entry -> responseBuilder
+                .buildResponseString(
+                    entry.namespace.namespaceName,
+                    entry.entryName,
+                    entry.host)}
+            .toList()
+    }
 }
